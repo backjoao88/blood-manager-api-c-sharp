@@ -11,3 +11,6 @@ C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\o
 C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\obj\Debug\net8.0\refint\BloodManager.Application.dll
 C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\obj\Debug\net8.0\BloodManager.Application.pdb
 C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\obj\Debug\net8.0\ref\BloodManager.Application.dll
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\bin\Debug\net8.0\BloodManager.Core.dll
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\bin\Debug\net8.0\BloodManager.Core.pdb
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Application\obj\Debug\net8.0\BloodManager.Application.csproj.CopyComplete

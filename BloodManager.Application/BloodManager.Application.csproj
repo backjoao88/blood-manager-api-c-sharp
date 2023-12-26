@@ -11,4 +11,7 @@
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\BloodManager.Core\BloodManager.Core.csproj" />
+    </ItemGroup>
 </Project>

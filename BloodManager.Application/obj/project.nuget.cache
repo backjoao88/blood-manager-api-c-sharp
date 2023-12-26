@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "mJI/+SEsmMKoQqAmUK4QU4UehbMIQ6vsAd70NmCfruie01jwQeVjMOOKdPm6fArkSFl8PHGchLLw9H/DRhC0oA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Back\\RiderProjects\\blood-manager-api-c-sharp\\BloodManager.Application\\BloodManager.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Back\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
+    "C:\\Users\\Back\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Back\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.8.1\\fluentvalidation.dependencyinjectionextensions.11.8.1.nupkg.sha512",
+    "C:\\Users\\Back\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

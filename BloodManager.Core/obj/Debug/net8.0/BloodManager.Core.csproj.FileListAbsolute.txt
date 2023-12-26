@@ -1,0 +1,12 @@
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\bin\Debug\net8.0\BloodManager.Core.deps.json
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\bin\Debug\net8.0\BloodManager.Core.dll
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\bin\Debug\net8.0\BloodManager.Core.pdb
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.AssemblyInfoInputs.cache
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.AssemblyInfo.cs
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.csproj.CoreCompileInputs.cache
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.sourcelink.json
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.dll
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\refint\BloodManager.Core.dll
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\BloodManager.Core.pdb
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Core\obj\Debug\net8.0\ref\BloodManager.Core.dll

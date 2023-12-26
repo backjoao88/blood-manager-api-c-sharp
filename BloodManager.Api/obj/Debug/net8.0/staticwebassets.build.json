@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NjkLPmijb5fhfQSTJQZNgrSx/K7HLXd+NnOuaLQqH78=",
+  "Source": "BloodManager.Api",
+  "BasePath": "_content/BloodManager.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,3 @@
+GET http://localhost:5135/api/donors
+Accept: application/json
+###

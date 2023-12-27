@@ -4,7 +4,7 @@ public interface IBkRequestHandler<TRequest, TResponse> where TRequest : IBkRequ
     public Task<TResponse> HandleAsync(TRequest request);
 }
 
-public interface IBkRequestHandler<TRequest> where TRequest : IBkRequest
+public interface IBkRequestHandler<TRequest>
 {
     public Task HandleAsync(TRequest request);
 }

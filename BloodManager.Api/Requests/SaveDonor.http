@@ -1,0 +1,16 @@
+﻿POST http://localhost:5135/api/donors
+Content-Type: application/json
+
+{
+  "firstName": "Diogo",
+  "lastName": "Alencar",
+  "email": "diogoalencar@gmail.com",
+  "address": {
+    "street": "Rua Pedro 123",
+    "postalCode": "884000",
+    "city": "Ituporanga",
+    "state": "SC"
+  },
+  "weight": "94.0",
+  "birth": "1986-10-01"
+}

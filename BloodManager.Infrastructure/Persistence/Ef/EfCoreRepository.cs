@@ -23,22 +23,8 @@ public class EfCoreRepository<TEntity> : IRepository<TEntity> where TEntity : En
     {
         await EfCoreContext.Set<TEntity>().AddAsync(data);
     }
-    public void Remove(TEntity data)
+    public void Remove(TEntity entity)
     {
-        var entity = FindById(data);
-        if (entity is null)
-        {
-            return;
-        }
-        entity.Delete();
-    }
-    public async Task RemoveAsync(TEntity data)
-    {
-        var entity = await FindByIdAsync(data);
-        if (entity is null)
-        {
-            return;
-        }
         entity.Delete();
     }
     public async Task<List<TEntity>> FindAllAsync()
@@ -49,13 +35,13 @@ public class EfCoreRepository<TEntity> : IRepository<TEntity> where TEntity : En
     {
         return EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).ToList();
     }
-    public async Task<TEntity?> FindByIdAsync(TEntity data)
+    public async Task<TEntity?> FindByIdAsync(Guid id)
     {
-        return await EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).SingleOrDefaultAsync(o => o.Id == data.Id);
+        return await EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).SingleOrDefaultAsync(o => o.Id == id);
     }
-    public TEntity? FindById(TEntity data)
+    public TEntity? FindById(Guid id)
     {
-        return EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).SingleOrDefault(o => o.Id == data.Id);
+        return EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).SingleOrDefault(o => o.Id == id);
     }
     public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
     {

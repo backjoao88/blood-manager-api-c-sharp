@@ -23,10 +23,10 @@ public class Donor : Entity
         Weight = weight;
         Birth = birth;
     }
-    public string FirstName { get; set; } = null!;
-    public string LastName { get; set; } = null!;
-    public Email Email { get; set; } = null!;
-    public Address Address { get; set; } = null!;
-    public double Weight { get; set; }
-    public DateTime Birth { get; set; }
+    public string FirstName { get; private set; } = null!;
+    public string LastName { get; private set; } = null!;
+    public Email Email { get; private set; } = null!;
+    public Address Address { get; private set; } = null!;
+    public double Weight { get; private set; }
+    public DateTime Birth { get; private set; }
 }

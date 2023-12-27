@@ -2,8 +2,12 @@
 
 public static class ResultExtensions
 {
-    public static Result Bind<TIn, TOut>(this Result result, Func<TIn, TOut> next)
+    public static Result Bind(this Result result, Func<Result> next)
     {
-        return Result.Fail(GenericErrors.NullValue);
+        if (result.IsSuccess)
+        {
+            return next();
+        }
+        return Result.Fail(result.Error);
     }
 }

@@ -7,11 +7,13 @@ namespace Core.ValueObjects;
 /// </summary>
 public class Email : ValueObject
 {
+    private Email() { }
     public Email(string value)
     {
         Value = value;
     }
-    public string Value { get; set; }
+    public string Value { get; set; } = null!;
+
     public override IEnumerable<object> Properties()
     {
         yield return Value;

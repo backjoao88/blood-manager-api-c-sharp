@@ -1,5 +1,6 @@
 ﻿using Application.Commands.Donors.CreateDonor;
 using Application.Commands.Donors.DeleteDonor;
+using Application.Commands.Donors.UpdateDonor;
 using Application.Queries.Donors.ReadAllDonors;
 using Application.Queries.Donors.ReadDonorById;
 using Application.ViewModels;
@@ -16,7 +17,7 @@ namespace BloodManager.Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("/api/donors")]
-public sealed class DonorController : ApiController
+public class DonorController : ApiController
 {
     private readonly IBkMediator _mediator;
     public DonorController(IBkMediator mediator)
@@ -83,6 +84,23 @@ public sealed class DonorController : ApiController
     {
         var deleteDonorCommand = new DeleteDonorCommand(id);
         var result = await _mediator.SendAsync<DeleteDonorCommand, Result>(deleteDonorCommand);
-        return result.IsSuccess ? Ok() : NotFound(GenericErrors.NotFound);
+        return result.IsSuccess ? Ok() : NotFound(result.Error);
+    }
+
+    /// <summary>
+    /// Updates a donor in the database
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="updateDonorCommand"></param>
+    /// <returns>A status 200 OK</returns>
+    /// <returns>A status 404 Not Found with an api error response</returns>
+    [HttpPut("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateDonorCommand updateDonorCommand)
+    {
+        updateDonorCommand.Id = id;
+        var result = await _mediator.SendAsync<UpdateDonorCommand, Result>(updateDonorCommand);
+        return result.IsSuccess ? Ok() : NotFound(result.Error);
     }
 }

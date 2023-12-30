@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BloodManager.Api</name>
+    </assembly>
+    <members>
+        <member name="T:BloodManager.Api.Abstractions.ApiController">
+            <summary>
+            General use API controller
+            Inherits ControllerBase from AspNet Core
+            </summary>
+        </member>
+        <member name="T:BloodManager.Api.Abstractions.ApiErrorResponse">
+            <summary>
+            Wrapper a general api error response
+            </summary>
+        </member>
+        <member name="T:BloodManager.Api.Controllers.DonationController">
+            <summary>
+            Represents the donation endpoint controller
+            </summary>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonationController.Post(Application.Commands.Donations.CreateDonation.CreateDonationCommand)">
+            <summary>
+            Creates a new donation in the database
+            </summary>
+            <param name="createDonationCommand"></param>
+            <returns>A status 200 OK</returns>
+            <returns>A status 400 Bad Request with an api error response</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonationController.GetById(System.Guid,Application.Queries.Donations.ReadDonationById.ReadDonationByIdQuery)">
+            <summary>
+            Returns a donation that matches with the informed Guid ID
+            </summary>
+            <param name="id"></param>
+            <param name="readDonationByIdQuery"></param>
+            <returns>A status 200 OK with the required stock</returns>
+            <returns>A status 400 Bad Request with an api error response</returns>
+        </member>
+        <member name="T:BloodManager.Api.Controllers.DonorController">
+            <summary>
+            Represents the donor endpoint controller
+            </summary>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonorController.Post(Application.Commands.Donors.CreateDonor.CreateDonorCommand)">
+            <summary>
+            Creates a new donor in the database
+            </summary>
+            <param name="createDonorCommand"></param>
+            <returns>A status 200 OK</returns>
+            <returns>A status 400 Bad Request with an api error response</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonorController.GetAll">
+            <summary>
+            Returns all donors 
+            </summary>
+            <returns>A status 200 OK with a list of donors</returns>
+            <returns>A status 400 Bad Request with an api error response</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonorController.GetById(System.Guid)">
+            <summary>
+            Returns a donor that matches with the informed Guid ID
+            </summary>
+            <param name="id"></param>
+            <returns>A status 200 OK with the required donor</returns>
+            <returns>A status 400 Bad Request with an api error response</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonorController.Delete(System.Guid)">
+            <summary>
+            Deletes a donor from the database
+            </summary>
+            <param name="id"></param>
+            <returns>A status 200 OK</returns>
+            <returns>A status 404 Not Found with an api error response</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonorController.Update(System.Guid,Application.Commands.Donors.UpdateDonor.UpdateDonorCommand)">
+            <summary>
+            Updates a donor in the database
+            </summary>
+            <param name="id"></param>
+            <param name="updateDonorCommand"></param>
+            <returns>A status 200 OK</returns>
+            <returns>A status 404 Not Found with an api error response</returns>
+        </member>
+        <member name="T:BloodManager.Api.Controllers.StockController">
+            <summary>
+            Represents the stock endpoint controller
+            </summary>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.StockController.Post(Application.Commands.Stocks.CreateStock.CreateStockCommand)">
+            <summary>
+            Creates a new stock in the database
+            </summary>
+            <param name="createStockCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.StockController.GetById(System.Guid,Application.Queries.Stocks.ReadStockById.ReadStockByIdQuery)">
+            <summary>
+            Returns a stock that matches with the informed Guid ID
+            </summary>
+            <param name="id"></param>
+            <param name="readStockByIdQuery"></param>
+            <returns>A status 200 OK with the required stock</returns>
+            <returns>A status 400 Bad Request with an api error response</returns>
+        </member>
+        <member name="T:BloodManager.Api.Middlewares.GlobalExceptionMiddleware">
+            <summary>
+            Represents a middleware responsible for handling global exceptions
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -15,5 +15,9 @@ public class CreateDonorCommandValidator : AbstractValidator<CreateDonorCommand>
         RuleFor(o => o.Birth).NotEmpty();
         RuleFor(o => o.Email).NotEmpty().EmailAddress().MaximumLength(100);
         RuleFor(o => o.Weight).NotEmpty().GreaterThan(30);
+        RuleFor(o => o.Address.City).NotEmpty();
+        RuleFor(o => o.Address.State).NotEmpty();
+        RuleFor(o => o.Address.Street).NotEmpty();
+        RuleFor(o => o.Address.PostalCode).NotEmpty();
     }
 }

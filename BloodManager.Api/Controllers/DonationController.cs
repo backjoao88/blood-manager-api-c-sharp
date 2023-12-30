@@ -35,7 +35,9 @@ public class DonationController : ApiController
     public async Task<IActionResult> Post([FromBody] CreateDonationCommand createDonationCommand)
     {
         var result = await _mediator.SendAsync<CreateDonationCommand, Result>(createDonationCommand);
-        return result.IsSuccess ? Ok() : BadRequest(result.Error);
+        return result.IsSuccess 
+            ? Ok() 
+            : BadRequest(result.Error);
     }
 
     /// <summary>
@@ -47,7 +49,7 @@ public class DonationController : ApiController
     /// <returns>A status 400 Bad Request with an api error response</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(DonationViewModel), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetById(Guid id, [FromBody] ReadDonationByIdQuery readDonationByIdQuery)
     {
         readDonationByIdQuery.Id = id;

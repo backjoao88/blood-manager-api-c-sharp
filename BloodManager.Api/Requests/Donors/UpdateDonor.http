@@ -1,0 +1,9 @@
+﻿PUT http://localhost:5135/api/donors/f03ee0bf-c409-4ccb-b7b3-08dc0933e0cf
+Content-Type: application/json
+
+{
+  "id": "f03ee0bf-c409-4ccb-b7b3-08dc0933e0cf",
+  "firstName": "John",
+  "lastName": "222",
+  "email": "johnmarston@gmail.com"
+}

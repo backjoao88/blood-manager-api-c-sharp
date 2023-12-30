@@ -14,7 +14,7 @@ namespace BloodManager.Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("/api/stocks")]
-public sealed class StockController : ApiController
+public class StockController : ApiController
 {
     private readonly IBkMediator _mediator;
     public StockController(IBkMediator mediator)

@@ -79,3 +79,5 @@ C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Api\bin\Debug
 C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Api\bin\Debug\net8.0\BloodManager.Infrastructure.dll
 C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Api\bin\Debug\net8.0\BloodManager.Infrastructure.pdb
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Api\bin\Debug\net8.0\BloodManager.Api.xml
+C:\Users\Back\RiderProjects\blood-manager-api-c-sharp\BloodManager.Api\obj\Debug\net8.0\BloodManager.Api.xml

@@ -102,5 +102,19 @@ public class Donor : Entity
         }   
         return Result.Ok();
     }
-    
+
+    /// <summary>
+    /// Updates the current object with the params values
+    /// </summary>
+    /// <param name="firstName"></param>
+    /// <param name="lastName"></param>
+    /// <param name="email"></param>
+    /// <param name="address"></param>
+    public void Update(string firstName, string lastName, Email email, Address address)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Email = email;
+        Address = address;
+    }
 }

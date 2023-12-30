@@ -7,6 +7,13 @@ namespace Core.ValueObjects;
 /// </summary>
 public class Address : ValueObject
 {
+    public Address(string street, string postalCode, string city, string state)
+    {
+        Street = street;
+        PostalCode = postalCode;
+        City = city;
+        State = state;
+    }
     public string Street { get; set; } = "";
     public string PostalCode { get; set; } = "";
     public string City { get; set; } = "";

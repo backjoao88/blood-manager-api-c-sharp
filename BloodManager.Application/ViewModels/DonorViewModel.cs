@@ -1,4 +1,5 @@
-﻿using Core.ValueObjects;
+﻿using Core.Enums;
+using Core.ValueObjects;
 
 namespace Application.ViewModels;
 
@@ -7,7 +8,7 @@ namespace Application.ViewModels;
 /// </summary>
 public sealed class DonorViewModel
 {
-    public DonorViewModel(Guid id, string firstName, string lastName, string email, Address address, double weight, DateTime birth)
+    public DonorViewModel(Guid id, string firstName, string lastName, string email, Address address, double weight, DateTime birth, EBlood blood, EBloodRhFactor bloodRhFactor, EGenre genre)
     {
         Id = id;
         FirstName = firstName;
@@ -16,6 +17,9 @@ public sealed class DonorViewModel
         Address = address;
         Weight = weight;
         Birth = birth;
+        Blood = blood;
+        BloodRhFactor = bloodRhFactor;
+        Genre = genre;
     }
     public Guid Id { get; set; }
     public string FirstName { get; set; }
@@ -24,4 +28,7 @@ public sealed class DonorViewModel
     public Address Address { get; set; }
     public double Weight { get; set; }
     public DateTime Birth { get; set; }
+    public EBlood Blood { get; set; }
+    public EBloodRhFactor BloodRhFactor { get; set; }
+    public EGenre Genre { get; set; }
 }

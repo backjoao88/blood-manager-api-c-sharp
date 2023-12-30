@@ -1,4 +1,5 @@
 ﻿using BloodManager.Application.Abstractions.BkMediator;
+using Core.Enums;
 using Core.Primitives.Result;
 using Core.ValueObjects;
 
@@ -18,7 +19,10 @@ public class CreateDonorCommand : IBkRequest<Result>
     /// <param name="address"></param>
     /// <param name="weight"></param>
     /// <param name="birth"></param>
-    public CreateDonorCommand(string firstName, string lastName, string email, Address address, double weight, DateTime birth)
+    /// <param name="bloodType"></param>
+    /// <param name="bloodRhFactor"></param>
+    /// <param name="genre"></param>
+    public CreateDonorCommand(string firstName, string lastName, string email, Address address, double weight, DateTime birth, EBlood bloodType, EBloodRhFactor bloodRhFactor, EGenre genre)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -26,6 +30,9 @@ public class CreateDonorCommand : IBkRequest<Result>
         Address = address;
         Weight = weight;
         Birth = birth;
+        BloodType = bloodType;
+        BloodRhFactor = bloodRhFactor;
+        Genre = genre;
     }
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -33,4 +40,8 @@ public class CreateDonorCommand : IBkRequest<Result>
     public Address Address { get; set; }
     public double Weight { get; set; }
     public DateTime Birth { get; set; }
+    public EBlood BloodType { get; set; }
+    public EBloodRhFactor BloodRhFactor { get; set; }
+    public EGenre Genre { get; set; }
+    
 }

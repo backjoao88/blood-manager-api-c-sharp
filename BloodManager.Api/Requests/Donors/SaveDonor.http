@@ -2,15 +2,15 @@
 Content-Type: application/json
 
 {
-  "firstName": "Samuel",
-  "lastName": "Burg",
-  "email": "samuelburg@gmail.com",
+  "firstName": "Larissa",
+  "lastName": "Eyng",
+  "email": "larissaeyng@gmail.com",
   "address": {
     "street": "Rua Pedro 123",
     "postalCode": "884000",
     "city": "Ituporanga",
     "state": "SC"
   },
-  "weight": "75.0",
+  "weight": "49",
   "birth": "1999-10-01"
 }

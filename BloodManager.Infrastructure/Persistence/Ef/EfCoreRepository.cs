@@ -43,12 +43,8 @@ public class EfCoreRepository<TEntity> : IRepository<TEntity> where TEntity : En
     {
         return EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).SingleOrDefault(o => o.Id == id);
     }
-    public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+    public List<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
     {
         return EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).Where(predicate).ToList();
-    }
-    public Task<List<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate)
-    {
-        return EfCoreContext.Set<TEntity>().Where(o => !o.IsDeleted).Where(predicate).ToListAsync();
     }
 }

@@ -25,6 +25,6 @@ public class ReadDonorByIdQueryHandler : IBkRequestHandler<ReadDonorByIdQuery, R
         {
             return Result.Fail<DonorViewModel>(GenericErrors.NotFound);
         }
-        return Result.Ok(new DonorViewModel(donor.Id, donor.FirstName, donor.LastName, donor.Email.Value, donor.Address, donor.Weight, donor.Birth));
+        return Result.Ok(new DonorViewModel(donor.Id, donor.FirstName, donor.LastName, donor.Email.Value, donor.Address, donor.Weight, donor.Birth, donor.BloodType, donor.BloodRhFactor, donor.Genre));
     }
 }

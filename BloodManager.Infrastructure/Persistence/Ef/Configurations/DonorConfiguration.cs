@@ -30,6 +30,6 @@ public class DonorConfiguration : EfBaseConfiguration<Donor>
         builder.Property(o => o.LastName).IsRequired().HasColumnName("LastName");
         builder.Property(o => o.Birth).IsRequired().HasColumnName("Birth");
         builder.Property(o => o.BloodType).IsRequired().HasColumnName("BloodType");
-        builder.Property(o => o.EBloodRhFactor).IsRequired().HasColumnName("BloodRhFactor");
+        builder.Property(o => o.BloodRhFactor).IsRequired().HasColumnName("BloodRhFactor");
     }
 }

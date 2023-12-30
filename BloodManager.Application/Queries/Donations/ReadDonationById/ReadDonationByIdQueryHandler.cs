@@ -35,7 +35,10 @@ public class ReadDonationByIdQueryHandler : IBkRequestHandler<ReadDonationByIdQu
                         donation.Donor.Email.Value, 
                         donation.Donor.Address, 
                         donation.Donor.Weight, 
-                        donation.Donor.Birth
+                        donation.Donor.Birth,
+                        donation.Donor.BloodType,
+                        donation.Donor.BloodRhFactor,
+                        donation.Donor.Genre
                     ) : null
         );
         return Result.Ok(donationViewModel);

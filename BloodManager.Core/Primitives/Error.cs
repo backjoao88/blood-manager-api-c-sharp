@@ -27,8 +27,19 @@ public static class DomainErrors
 {
     public static class Donor
     {
-        public static Error InvalidAgeError = new Error("Donor.InvalidAgeError", "The age informed is invalid.");
+        public static Error NotFoundDonorError = new("Donor.NotFound", "The donor informed was not found.");
+        public static Error NotAllowedAgeError = new("Donor.NotAllowedAgeError", "The age informed is invalid.");
+        public static Error NotAllowedWeightError =
+            new("Donor.NotAllowedWeightError", "The weight informed is invalid."); 
         public static Error EmailNotUniqueError =
-            new Error("Donor.EmailNotUniqueError", "The email informed is already taken.");
+            new ("Donor.EmailNotUniqueError", "The email informed is already taken.");
+        public static Error NotInValidIntervalError = new("Donor.NotInValidIntervalError",
+            "The donor informed is not within a valid interval to donate.");
+    }
+
+    public static class Donation
+    {
+        public static Error NotValidQuantityError =
+            new("Donation.NotValidQuantityError", "The donation has an invalid blood quantity.");
     }
 }

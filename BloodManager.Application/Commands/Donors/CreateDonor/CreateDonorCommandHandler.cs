@@ -23,8 +23,9 @@ public class CreateDonorCommandHandler : IBkRequestHandler<CreateDonorCommand, R
     public async Task<Result> HandleAsync(CreateDonorCommand request)
     {
         var email = new Email(request.Email);
-        var donor = new Donor(request.FirstName, request.LastName, email, request.Address, request.Weight, request.Birth);
-        if (!await _unitOfWork.DonorRepository.IsEmailUnique(email))
+        var donor = new Donor(request.FirstName, request.LastName, email, request.Address, request.Weight, request.Birth, request.BloodType, request.BloodRhFactor, request.Genre);
+        var isEmailUnique = await _unitOfWork.DonorRepository.IsEmailUnique(email); 
+        if(!isEmailUnique)
         {
             return Result.Fail(DomainErrors.Donor.EmailNotUniqueError);
         }

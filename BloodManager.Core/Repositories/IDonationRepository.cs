@@ -10,4 +10,5 @@ public interface IDonationRepository : IRepository<Donation>
 {
     public new Task<Donation?> FindByIdAsync(Guid id);
     public new Task<List<Donation>> FindAllAsync();
+    public Task<Donation?> GetLastDonationFromAsync(Guid idDonor);
 }

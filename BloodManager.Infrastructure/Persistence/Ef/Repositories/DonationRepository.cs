@@ -32,4 +32,15 @@ public class DonationRepository : EfCoreRepository<Donation>, IDonationRepositor
     {
         return await EfCoreContext.Donations.Include(o => o.Donor).ToListAsync();
     }
+    
+    /// <summary>
+    /// Returns the last donation date from the requested donor 
+    /// </summary>
+    /// <param name="idDonor"></param>
+    /// <returns>A datetime value</returns>
+    public async Task<Donation?> GetLastDonationFromAsync(Guid idDonor)
+    {
+        return await EfCoreContext.Donations.Where(o => o.IdDonor == idDonor).OrderByDescending(o => o.DonationDate)
+            .FirstOrDefaultAsync();
+    }
 }

@@ -19,7 +19,7 @@ public class ReadAllDonorsQueryHandler : IBkRequestHandler<ReadAllDonorsQuery, I
     public async Task<IEnumerable<DonorViewModel>> HandleAsync(ReadAllDonorsQuery request)
     {
         var donors = await _unitOfWork.DonorRepository.FindAllAsync();
-        var donorsViewModel = donors.Select(o => new DonorViewModel(o.Id, o.FirstName, o.LastName, o.Email.Value, o.Address, o.Weight, o.Birth));
+        var donorsViewModel = donors.Select(o => new DonorViewModel(o.Id, o.FirstName, o.LastName, o.Email.Value, o.Address, o.Weight, o.Birth, o.BloodType, o.BloodRhFactor, o.Genre));
         return donorsViewModel;
     }
 }

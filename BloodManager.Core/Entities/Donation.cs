@@ -1,4 +1,5 @@
 ﻿using Core.Primitives;
+using Core.Primitives.Result;
 
 namespace Core.Entities;
 
@@ -21,4 +22,13 @@ public class Donation : Entity
     public double QuantityMl { get; private set; }
     public Guid? IdDonor { get; private set; }
     public Donor? Donor { get; private set; }
+
+    public Result IsValidQuantity()
+    {
+        if (QuantityMl < 420 || QuantityMl > 470)
+        {
+            return Result.Fail(DomainErrors.Donation.NotValidQuantityError);
+        }
+        return Result.Ok();
+    }
 }

@@ -8,8 +8,7 @@ public interface IRepository<TEntity> where TEntity : Entity
     public void Save(TEntity value);
     public Task SaveAsync(TEntity data);
     public void Remove(TEntity value);
-    public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
-    public Task<List<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
+    public List<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
     public TEntity? FindById(Guid data);
     public Task<TEntity?> FindByIdAsync(Guid id);
     public Task<List<TEntity>> FindAllAsync();

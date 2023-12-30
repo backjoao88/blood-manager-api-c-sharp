@@ -15,6 +15,8 @@ public static class DependencyInjection
     {
         services.AddDbContext<EfCoreContext>();
         services.AddScoped<IDonorRepository, DonorRepository>();
+        services.AddScoped<IStockRepository, StockRepository>();
+        services.AddScoped<IDonationRepository, DonationRepository>();
         services.AddScoped<IUnitOfWork, EfCoreUnitOfWork>();
         return services;
     }

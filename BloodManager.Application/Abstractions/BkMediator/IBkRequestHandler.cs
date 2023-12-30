@@ -1,4 +1,6 @@
-﻿namespace BloodManager.Application.Abstractions.BkMediator;
+﻿using BloodManager.Application.Abstractions.BkMediator;
+
+namespace Application.Abstractions.BkMediator;
 public interface IBkRequestHandler<TRequest, TResponse> where TRequest : IBkRequest<TResponse>
 {
     public Task<TResponse> HandleAsync(TRequest request);

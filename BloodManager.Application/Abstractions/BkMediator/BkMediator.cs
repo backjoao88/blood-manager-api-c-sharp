@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using BloodManager.Application.Abstractions.BkMediator;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace BloodManager.Application.Abstractions.BkMediator;
+namespace Application.Abstractions.BkMediator;
 
 public class BkMediator : IBkMediator
 {
@@ -21,7 +22,6 @@ public class BkMediator : IBkMediator
             await handler.HandleAsync(request);
             return;
         }
-
         CommandHandlerDelegate next = () => handler.HandleAsync(request);
         behaviours.Reverse();
         foreach (var behaviour in behaviours)

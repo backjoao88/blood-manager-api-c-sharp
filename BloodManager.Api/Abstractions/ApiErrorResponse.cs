@@ -7,9 +7,14 @@ namespace BloodManager.Api.Abstractions;
 /// </summary>
 public class ApiErrorResponse
 {
-    public ApiErrorResponse(List<Error> errors)
+    public ApiErrorResponse(IReadOnlyCollection<Error> errors)
     {
-        _errors = errors;
+        Errors = errors;
     }
-    private readonly List<Error> _errors;
+
+    public ApiErrorResponse(Error error)
+    {
+        Errors = new[] { error };
+    }
+    public IReadOnlyCollection<Error> Errors { get; set; }
 }

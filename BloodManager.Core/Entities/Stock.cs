@@ -8,16 +8,17 @@ namespace Core.Entities;
 /// </summary>
 public class Stock : Entity
 {
-    public Stock(string description, EBlood bloodType, EBloodRhFactor bloodRhFactor, int quantityMl)
+    public Stock(string description, EBlood bloodType, EBloodRhFactor bloodRhFactor, double quantityMl, double minimumQuantityMl)
     {
         Description = description;
         BloodType = bloodType;
         BloodRhFactor = bloodRhFactor;
         QuantityMl = quantityMl;
+        MinimumQuantityMl = minimumQuantityMl;
     }
-    public Guid Id { get; set; }
     public string Description { get; set; }
     public EBlood BloodType { get; set; }
     public EBloodRhFactor BloodRhFactor { get; set; }
-    public int QuantityMl { get; set; }
+    public double QuantityMl { get; set; }
+    public double MinimumQuantityMl { get; set; }
 }

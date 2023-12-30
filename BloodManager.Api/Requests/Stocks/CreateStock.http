@@ -1,0 +1,11 @@
+﻿POST http://localhost:5135/api/stocks
+Content-Type: application/json
+
+{
+  "description": "Blood Type I",
+  "bloodType": 1,
+  "bloodRhFactor": 0,
+  "quantityMl": 50000,
+  "minimumQuantityMl": 5000
+}
+###

@@ -1,4 +1,6 @@
-﻿namespace BloodManager.Application.Abstractions.BkMediator;
+﻿using BloodManager.Application.Abstractions.BkMediator;
+
+namespace Application.Abstractions.BkMediator;
 
 public interface IBkPipelineBehaviour<TRequest> where TRequest : IBkRequest
 {

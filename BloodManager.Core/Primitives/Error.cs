@@ -1,6 +1,6 @@
 ﻿namespace Core.Primitives;
 
-public class Error
+public class Error : ValueObject
 {
     public Error(string code, string message)
     {
@@ -9,6 +9,11 @@ public class Error
     }
     public string Code { get; set; }
     public string Message { get; set; }
+    public override IEnumerable<object> Properties()
+    {
+        yield return Code;
+        yield return Message;
+    }
 }
 
 public static class GenericErrors

@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using Application.Abstractions.BkMediator;
+using Application.Behaviors;
 using BloodManager.Application.Abstractions.BkMediator;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +22,7 @@ public static class DependencyInjection
             var interfaceType = handler.GetInterfaces().FirstOrDefault();
             if (interfaceType != null) services.AddScoped(interfaceType, handler);
         }
+        services.AddScoped(typeof(IBkPipelineBehaviour<,>), typeof(ValidationBehavior<,>));
         return services;
     }
 

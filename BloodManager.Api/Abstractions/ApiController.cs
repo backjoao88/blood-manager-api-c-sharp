@@ -9,6 +9,6 @@ namespace BloodManager.Api.Abstractions;
 /// </summary>
 public abstract class ApiController : ControllerBase
 {
-    public IActionResult BadRequest(Error error) => BadRequest(new ApiErrorResponse(new() { error }));
-    public IActionResult BadRequest(List<Error> errors) => BadRequest(new ApiErrorResponse(errors));
+    public IActionResult BadRequest(Error error) => BadRequest(new ApiErrorResponse(new[] { error }));
+    public IActionResult BadRequest(Error[] errors) => BadRequest(new ApiErrorResponse(errors));
 }

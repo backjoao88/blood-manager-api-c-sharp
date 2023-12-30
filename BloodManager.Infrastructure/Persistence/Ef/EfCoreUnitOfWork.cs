@@ -8,12 +8,16 @@ namespace BloodManager.Infrastructure.Persistence.Ef;
 /// </summary>
 public class EfCoreUnitOfWork : IUnitOfWork
 {
-    public EfCoreUnitOfWork(EfCoreContext efCoreContext, IDonorRepository donorRepository)
+    public EfCoreUnitOfWork(EfCoreContext efCoreContext, IDonorRepository donorRepository, IStockRepository stockRepository, IDonationRepository donationRepository)
     {
         _efCoreContext = efCoreContext;
         DonorRepository = donorRepository;
+        StockRepository = stockRepository;
+        DonationRepository = donationRepository;
     }
     public IDonorRepository DonorRepository { get; set; }
+    public IStockRepository StockRepository { get; set; }
+    public IDonationRepository DonationRepository { get; }
     private readonly EfCoreContext _efCoreContext;
     public int Complete()
     {

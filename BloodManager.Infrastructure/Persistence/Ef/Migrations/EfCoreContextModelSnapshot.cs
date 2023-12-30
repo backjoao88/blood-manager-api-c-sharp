@@ -22,6 +22,32 @@ namespace BloodManager.Infrastructure.Persistence.Ef.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Core.Entities.Donation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DonationDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<Guid?>("IdDonor")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("QuantityMl")
+                        .HasColumnType("float")
+                        .HasColumnName("QuantityMl");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdDonor");
+
+                    b.ToTable("tbl_Donation", (string)null);
+                });
+
             modelBuilder.Entity("Core.Entities.Donor", b =>
                 {
                     b.Property<Guid>("Id")
@@ -29,18 +55,29 @@ namespace BloodManager.Infrastructure.Persistence.Ef.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Birth")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("Birth");
+
+                    b.Property<int>("BloodType")
+                        .HasColumnType("int")
+                        .HasColumnName("BloodType");
+
+                    b.Property<int>("EBloodRhFactor")
+                        .HasColumnType("int")
+                        .HasColumnName("BloodRhFactor");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("FirstName");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LastName");
 
                     b.Property<double>("Weight")
                         .HasColumnType("float");
@@ -48,6 +85,50 @@ namespace BloodManager.Infrastructure.Persistence.Ef.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tbl_Donor", (string)null);
+                });
+
+            modelBuilder.Entity("Core.Entities.Stock", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("BloodRhFactor")
+                        .HasColumnType("int")
+                        .HasColumnName("BloodRhFactor");
+
+                    b.Property<int>("BloodType")
+                        .HasColumnType("int")
+                        .HasColumnName("BloodType");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("Description");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("MinimumQuantityMl")
+                        .HasColumnType("float");
+
+                    b.Property<double>("QuantityMl")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tbl_Stock", (string)null);
+                });
+
+            modelBuilder.Entity("Core.Entities.Donation", b =>
+                {
+                    b.HasOne("Core.Entities.Donor", "Donor")
+                        .WithMany()
+                        .HasForeignKey("IdDonor")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Donor");
                 });
 
             modelBuilder.Entity("Core.Entities.Donor", b =>
@@ -59,19 +140,23 @@ namespace BloodManager.Infrastructure.Persistence.Ef.Migrations
 
                             b1.Property<string>("City")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("City");
 
                             b1.Property<string>("PostalCode")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("PostalCode");
 
                             b1.Property<string>("State")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("State");
 
                             b1.Property<string>("Street")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Street");
 
                             b1.HasKey("DonorId");
 
@@ -88,7 +173,8 @@ namespace BloodManager.Infrastructure.Persistence.Ef.Migrations
 
                             b1.Property<string>("Value")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Email");
 
                             b1.HasKey("DonorId");
 

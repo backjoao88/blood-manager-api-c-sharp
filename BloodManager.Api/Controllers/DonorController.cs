@@ -1,7 +1,7 @@
-﻿using Application.Commands.CreateDonor;
-using Application.Commands.DeleteDonor;
-using Application.Queries.Donor.ReadAllDonors;
-using Application.Queries.Donor.ReadDonorById;
+﻿using Application.Commands.Donors.CreateDonor;
+using Application.Commands.Donors.DeleteDonor;
+using Application.Queries.Donors.ReadAllDonors;
+using Application.Queries.Donors.ReadDonorById;
 using Application.ViewModels;
 using BloodManager.Api.Abstractions;
 using BloodManager.Application.Abstractions.BkMediator;
@@ -11,9 +11,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BloodManager.Api.Controllers;
 
+/// <summary>
+/// Represents the donor endpoint controller
+/// </summary>
 [ApiController]
 [Route("/api/donors")]
-public sealed class DonorController : ControllerBase
+public sealed class DonorController : ApiController
 {
     private readonly IBkMediator _mediator;
     public DonorController(IBkMediator mediator)

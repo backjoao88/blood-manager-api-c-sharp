@@ -1,4 +1,5 @@
-﻿using Core.Primitives;
+﻿using Core.Enums;
+using Core.Primitives;
 using Core.ValueObjects;
 
 namespace Core.Entities;
@@ -29,4 +30,6 @@ public class Donor : Entity
     public Address Address { get; private set; } = null!;
     public double Weight { get; private set; }
     public DateTime Birth { get; private set; }
+    public EBlood BloodType { get; private set; }
+    public EBloodRhFactor EBloodRhFactor { get; private set; }
 }

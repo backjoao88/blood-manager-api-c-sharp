@@ -1,0 +1,7 @@
+﻿GET http://localhost:5135/api/donations/94d61d7f-a47e-4e19-3a6d-08dc092f2d23
+Content-Type: application/json
+
+{
+  "id": "94d61d7f-a47e-4e19-3a6d-08dc092f2d23"
+}
+###

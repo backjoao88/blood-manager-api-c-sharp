@@ -1,10 +1,13 @@
 ﻿using Application.Commands.Donors.CreateDonor;
+using Application.Commands.Donors.UpdateDonor;
 using Application.Commands.Stocks.CreateStock;
+using Application.Commands.Stocks.UpdateStock;
 using Application.Queries.Stocks.ReadStockById;
 using Application.ViewModels;
 using BloodManager.Api.Abstractions;
 using BloodManager.Application.Abstractions.BkMediator;
 using Core.Primitives.Result;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BloodManager.Api.Controllers;
@@ -37,12 +40,28 @@ public class StockController : ApiController
     }
 
     /// <summary>
+    /// Updates the stock quantity of the requested stock
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="updateStockCommand"></param>
+    /// <returns>A status 200 OK with the required stock</returns>
+    /// <returns>A status 400 Not Found with an api error response</returns>
+    [HttpPatch("{id}")]
+    [ProducesResponseType(typeof(StockViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> UpdateStock(Guid id, UpdateStockCommand updateStockCommand)
+    {
+        var result = await _mediator.SendAsync<UpdateStockCommand, Result>(updateStockCommand);
+        return result.IsSuccess ? Ok() : NotFound(result.Error);
+    }
+
+    /// <summary>
     /// Returns a stock that matches with the informed Guid ID
     /// </summary>
     /// <param name="id"></param>
     /// <param name="readStockByIdQuery"></param>
     /// <returns>A status 200 OK with the required stock</returns>
-    /// <returns>A status 400 Bad Request with an api error response</returns>
+    /// <returns>A status 400 Not Found with an api error response</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(StockViewModel), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status404NotFound)]
@@ -50,7 +69,7 @@ public class StockController : ApiController
     {
         readStockByIdQuery.Id = id;
         var stockViewModelResult = await _mediator.SendAsync<ReadStockByIdQuery, Result<StockViewModel>>(readStockByIdQuery);
-        return stockViewModelResult.IsSuccess ? Ok(stockViewModelResult.Value) : BadRequest(stockViewModelResult.Error);
+        return stockViewModelResult.IsSuccess ? Ok(stockViewModelResult.Value) : NotFound(stockViewModelResult.Error);
     }
     
 }

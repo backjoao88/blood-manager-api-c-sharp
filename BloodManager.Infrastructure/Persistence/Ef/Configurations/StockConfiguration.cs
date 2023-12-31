@@ -17,6 +17,8 @@ public class StockConfiguration : EfBaseConfiguration<Stock>
         builder.Property(o => o.Description).IsRequired().HasColumnName("Description").HasMaxLength(255);
         builder.Property(o => o.BloodType).IsRequired().HasColumnName("BloodType");
         builder.Property(o => o.BloodRhFactor).IsRequired().HasColumnName("BloodRhFactor");
+        // ensure unique combinations
+        builder.HasIndex(o => new { o.BloodType, o.BloodRhFactor }).IsUnique();
         builder.Property(o => o.QuantityMl).IsRequired();
     }
 }

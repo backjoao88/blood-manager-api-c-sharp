@@ -12,7 +12,5 @@ public class CreateStockCommandValidator : AbstractValidator<CreateStockCommand>
         RuleFor(o => o.BloodType).NotEmpty();
         RuleFor(o => o.QuantityMl).NotEmpty().GreaterThan(0);
         RuleFor(o => o.Description).NotEmpty().MaximumLength(255);
-        RuleFor(o => o.BloodType).NotEmpty();
-        RuleFor(o => o.BloodRhFactor).NotEmpty();
     }
 }

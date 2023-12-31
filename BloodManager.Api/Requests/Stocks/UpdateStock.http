@@ -1,0 +1,7 @@
+﻿PATCH http://localhost:5135/api/stocks/05e1a577-7141-4661-a6f3-08dc079ffac4
+Content-Type: application/json
+
+{
+  "id": "05e1a577-7141-4661-a6f3-08dc079ffac4",
+  "quantityMl": 2000.50
+}

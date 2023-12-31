@@ -45,6 +45,14 @@ public class CreateDonationCommandHandler : IBkRequestHandler<CreateDonationComm
         {
             return Result.Fail(donationQuantityCheckResult.Error);
         }
+        // updates the stock
+        var stock = await _unitOfWork.StockRepository.FindByBloodTypeAndRhFactor(donor.BloodType, donor.BloodRhFactor);
+        if (stock is null)
+        {
+            return Result.Fail(DomainErrors.Stock.NotFoundStockError);
+        }
+        stock.Update(donation.QuantityMl);
+        // ----
         await _unitOfWork.DonationRepository.SaveAsync(donation);
         await _unitOfWork.CompleteAsync();
         return Result.Ok();

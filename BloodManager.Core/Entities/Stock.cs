@@ -21,4 +21,8 @@ public class Stock : Entity
     public EBloodRhFactor BloodRhFactor { get; set; }
     public double QuantityMl { get; set; }
     public double MinimumQuantityMl { get; set; }
+    public void Update(double quantityMl)
+    {
+        QuantityMl += quantityMl;
+    }
 }

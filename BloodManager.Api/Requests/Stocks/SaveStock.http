@@ -1,0 +1,11 @@
+﻿POST http://localhost:5135/api/stocks
+Content-Type: application/json
+
+{
+  "description": "RH Factor 2 and BloodType 1",
+  "bloodType": 1,
+  "bloodRhFactor": 2,
+  "quantityMl": 1,
+  "minimumQuantityMl": 1
+}
+###

@@ -42,4 +42,11 @@ public static class DomainErrors
         public static Error NotValidQuantityError =
             new("Donation.NotValidQuantityError", "The donation has an invalid blood quantity.");
     }
+
+    public static class Stock
+    {
+        public static Error NotFoundStockError = new("Stock.NotFound", "The stock informed was not found.");
+        public static Error DuplicatedStockError = new("Stock.DuplicatedStockError",
+            "There's already an stock of this blood type and RH factor.");
+    }
 }

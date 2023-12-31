@@ -94,6 +94,15 @@
             <param name="createStockCommand"></param>
             <returns></returns>
         </member>
+        <member name="M:BloodManager.Api.Controllers.StockController.UpdateStock(System.Guid,Application.Commands.Stocks.UpdateStock.UpdateStockCommand)">
+            <summary>
+            Updates the stock quantity of the requested stock
+            </summary>
+            <param name="id"></param>
+            <param name="updateStockCommand"></param>
+            <returns>A status 200 OK with the required stock</returns>
+            <returns>A status 400 Not Found with an api error response</returns>
+        </member>
         <member name="M:BloodManager.Api.Controllers.StockController.GetById(System.Guid,Application.Queries.Stocks.ReadStockById.ReadStockByIdQuery)">
             <summary>
             Returns a stock that matches with the informed Guid ID
@@ -101,7 +110,7 @@
             <param name="id"></param>
             <param name="readStockByIdQuery"></param>
             <returns>A status 200 OK with the required stock</returns>
-            <returns>A status 400 Bad Request with an api error response</returns>
+            <returns>A status 400 Not Found with an api error response</returns>
         </member>
         <member name="T:BloodManager.Api.Middlewares.GlobalExceptionMiddleware">
             <summary>

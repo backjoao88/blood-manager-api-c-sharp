@@ -2,15 +2,18 @@
 Content-Type: application/json
 
 {
-  "firstName": "Larissa",
+  "firstName": "Marcionei",
   "lastName": "Eyng",
-  "email": "larissaeyng@gmail.com",
+  "email": "marcionei2@gmail.com",
   "address": {
     "street": "Rua Pedro 123",
     "postalCode": "884000",
     "city": "Ituporanga",
     "state": "SC"
   },
-  "weight": "49",
-  "birth": "1999-10-01"
+  "weight": "85",
+  "birth": "1989-10-01",
+  "bloodType": 1,
+  "bloodRhFactor": 2,
+  "genre": 0
 }

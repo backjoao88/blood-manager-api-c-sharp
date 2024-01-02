@@ -14,10 +14,10 @@ public class Address : ValueObject
         City = city;
         State = state;
     }
-    public string Street { get; set; } = "";
-    public string PostalCode { get; set; } = "";
-    public string City { get; set; } = "";
-    public string State { get; set; } = "";
+    public string Street { get; set; }
+    public string PostalCode { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
     public override IEnumerable<object> Properties()
     {
         yield return Street;

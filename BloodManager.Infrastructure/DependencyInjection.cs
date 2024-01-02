@@ -1,7 +1,9 @@
 ﻿using BloodManager.Infrastructure.Persistence.Ef;
 using BloodManager.Infrastructure.Persistence.Ef.Repositories;
+using BloodManager.Infrastructure.Services;
 using Core.Contracts;
 using Core.Repositories;
+using Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BloodManager.Infrastructure;
@@ -18,6 +20,7 @@ public static class DependencyInjection
         services.AddScoped<IStockRepository, StockRepository>();
         services.AddScoped<IDonationRepository, DonationRepository>();
         services.AddScoped<IUnitOfWork, EfCoreUnitOfWork>();
+        services.AddScoped<IPostalCodeService, ViaCepPostalCodeService>();
         return services;
     }
 }

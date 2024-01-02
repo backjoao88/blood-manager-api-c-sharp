@@ -10,7 +10,7 @@ namespace BloodManager.Infrastructure.Persistence.Ef;
 public class EfCoreContext : DbContext
 {
     public DbSet<Donor> Donors { get; set; } = null!;
-    public DbSet<Stock?> Stocks { get; set; } = null!;
+    public DbSet<Stock> Stocks { get; set; } = null!;
     public DbSet<Donation> Donations { get; set; } = null!;
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

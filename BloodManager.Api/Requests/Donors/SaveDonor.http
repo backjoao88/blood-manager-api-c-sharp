@@ -4,12 +4,12 @@ Content-Type: application/json
 {
   "firstName": "Marcionei",
   "lastName": "Eyng",
-  "email": "marcionei2@gmail.com",
+  "email": "meyng@gmail.com",
   "address": {
     "street": "Rua Pedro 123",
-    "postalCode": "884000",
-    "city": "Ituporanga",
-    "state": "SC"
+    "postalCode": "88400000",
+    "city": "",
+    "state": ""
   },
   "weight": "85",
   "birth": "1989-10-01",

@@ -18,10 +18,10 @@ Menor de idade não pode doar, mas pode ter cadastro;
 - [x] Não deve permitir cadastro de mais de um tipo de sangue (tipo sanguineo + fator rh);
 - [x] Deve atualizar o estoque de sangue ao realizar doação;
 - [x] No cadastro de endereço deve ser possível consultar diretamente pelo CEP via API externa;  Dessa forma, caso seja informado o CEP, as informações de cidade, estado e endereço não precisam ser preenchidas.
-- [ ] Avisar quando o estoque atingir a quantidade mínima definida;
-- [ ] Deve ser possível consultar o histórico de doações de um doador;
-- [ ] Deve gerar um relatório sobre a quantidade toal de sangue por tipo disponível;
-- [ ] Deve gerar um relatório de doações nos últimos 30 dias com informações de doadores
+- [x] Avisar quando o estoque atingir a quantidade mínima definida;
+- [x] Deve ser possível consultar o histórico de doações de um doador;
+- [x] Deve gerar um relatório sobre a quantidade total de sangue por tipo disponível;
+- [x] Deve gerar um relatório de doações nos últimos 30 dias com informações de doadores
 
 ### Tecnologias e conceitos aplicados
 

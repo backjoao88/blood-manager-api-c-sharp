@@ -1,5 +1,5 @@
-﻿using Application.ViewModels;
-using BloodManager.Application.Abstractions.BkMediator;
+﻿using Application.Abstractions.BkMediator;
+using Application.ViewModels;
 using Core.Primitives.Result;
 
 namespace Application.Queries.Donations.ReadDonationById;

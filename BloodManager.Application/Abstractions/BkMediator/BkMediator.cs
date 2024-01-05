@@ -1,8 +1,12 @@
-﻿using BloodManager.Application.Abstractions.BkMediator;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Abstractions.BkMediator;
 
+/// <summary>
+/// Represents a mediator object.
+/// Used for redirect requests for handlers specified with the IBkRequestHandler interface.
+/// Already implements pipeline behaviors.
+/// </summary>
 public class BkMediator : IBkMediator
 {
     public BkMediator(IServiceProvider serviceProvider)
@@ -29,7 +33,6 @@ public class BkMediator : IBkMediator
             var currentNext = next;
             next = () => behaviour.HandleAsync(request, currentNext);
         }
-
         await next();
     }
 

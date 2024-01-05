@@ -22,7 +22,12 @@ public class UpdateStockCommandHandler : IBkRequestHandler<UpdateStockCommand, R
         {
             return Result.Fail(DomainErrors.Stock.NotFoundStockError);
         }
-        stock.Update(request.QuantityMl);
+        var stockUpdateResult = stock.Update(request.QuantityMl);
+        if (stockUpdateResult.IsFailure)
+        {
+            // stock update error
+            return Result.Fail(stockUpdateResult.Error);
+        }
         await _unitOfWork.CompleteAsync();
         return Result.Ok();
     }

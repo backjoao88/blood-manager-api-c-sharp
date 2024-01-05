@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Application.Abstractions.BkMediator;
 using Application.Exceptions;
-using BloodManager.Application.Abstractions.BkMediator;
 using Core.Primitives;
 using FluentValidation;
 

@@ -1,12 +1,11 @@
-﻿using Application.Commands.Donors.CreateDonor;
+﻿using Application.Abstractions.BkMediator;
+using Application.Commands.Donors.CreateDonor;
 using Application.Commands.Donors.DeleteDonor;
 using Application.Commands.Donors.UpdateDonor;
 using Application.Queries.Donors.ReadAllDonors;
 using Application.Queries.Donors.ReadDonorById;
 using Application.ViewModels;
 using BloodManager.Api.Abstractions;
-using BloodManager.Application.Abstractions.BkMediator;
-using Core.Primitives;
 using Core.Primitives.Result;
 using Microsoft.AspNetCore.Mvc;
 

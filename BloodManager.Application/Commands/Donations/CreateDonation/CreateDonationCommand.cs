@@ -1,4 +1,4 @@
-﻿using BloodManager.Application.Abstractions.BkMediator;
+﻿using Application.Abstractions.BkMediator;
 using Core.Primitives.Result;
 
 namespace Application.Commands.Donations.CreateDonation;

@@ -1,6 +1,5 @@
 ﻿using Application.Abstractions.BkMediator;
 using Application.ViewModels;
-using BloodManager.Application.Abstractions.BkMediator;
 using Core.Contracts;
 using Core.Primitives;
 using Core.Primitives.Result;

@@ -1,7 +1,7 @@
-﻿PATCH http://localhost:5135/api/stocks/05e1a577-7141-4661-a6f3-08dc079ffac4
+﻿PATCH http://localhost:5135/api/stocks/ddba1863-0208-47f1-a7ce-08dc096bf97c
 Content-Type: application/json
 
 {
-  "id": "05e1a577-7141-4661-a6f3-08dc079ffac4",
-  "quantityMl": 2000.50
+  "id": "ddba1863-0208-47f1-a7ce-08dc096bf97c",
+  "quantityMl": -1000
 }

@@ -1,0 +1,6 @@
+﻿GET http://localhost:5135/api/donations/ee65b284-a262-4c7c-0b84-08dc087cb1a6/donors
+Content-Type: application/json
+
+{
+  "idDonor": "ee65b284-a262-4c7c-0b84-08dc087cb1a6"
+}

@@ -1,0 +1,2 @@
+﻿GET http://localhost:5135/api/stocks
+Accept: application/json

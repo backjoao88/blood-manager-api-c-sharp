@@ -37,6 +37,21 @@
             <returns>A status 200 OK with the required stock</returns>
             <returns>A status 400 Bad Request with an api error response</returns>
         </member>
+        <member name="M:BloodManager.Api.Controllers.DonationController.GetDonationsWithinDays(System.Int32)">
+            <summary>
+            Return a list of the last donations based on a specified number of days
+            </summary>
+            <param name="days"></param>
+            <returns>A status 200 OK with a list of donations</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.DonationController.GetDonationsByDonorId(System.Guid,Application.Queries.Donations.ReadDonationByDonorId.ReadDonationByDonorId)">
+            <summary>
+            Returns a list of donations based on a specified donor id
+            </summary>
+            <param name="idDonor"></param>
+            <param name="readDonationByDonorId"></param>
+            <returns>A status 200 OK with a list of donations</returns>
+        </member>
         <member name="T:BloodManager.Api.Controllers.DonorController">
             <summary>
             Represents the donor endpoint controller
@@ -102,6 +117,12 @@
             <param name="updateStockCommand"></param>
             <returns>A status 200 OK with the required stock</returns>
             <returns>A status 400 Not Found with an api error response</returns>
+        </member>
+        <member name="M:BloodManager.Api.Controllers.StockController.GetAll">
+            <summary>
+            Returns a list of all stocks
+            </summary>
+            <returns>A status 200 OK</returns>
         </member>
         <member name="M:BloodManager.Api.Controllers.StockController.GetById(System.Guid,Application.Queries.Stocks.ReadStockById.ReadStockByIdQuery)">
             <summary>

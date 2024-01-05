@@ -1,0 +1,2 @@
+﻿GET http://localhost:5135/api/donations/last?days=2
+Accept: application/json

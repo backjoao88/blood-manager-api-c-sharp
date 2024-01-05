@@ -1,4 +1,4 @@
-﻿using BloodManager.Application.Abstractions.BkMediator;
+﻿using Application.Abstractions.BkMediator;
 using Core.Enums;
 using Core.Primitives.Result;
 using Core.ValueObjects;

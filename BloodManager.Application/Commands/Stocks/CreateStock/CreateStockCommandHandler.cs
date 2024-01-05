@@ -1,5 +1,4 @@
 ﻿using Application.Abstractions.BkMediator;
-using BloodManager.Application.Abstractions.BkMediator;
 using Core.Contracts;
 using Core.Entities;
 using Core.Primitives;
@@ -20,6 +19,11 @@ public class CreateStockCommandHandler : IBkRequestHandler<CreateStockCommand, R
     public async Task<Result> HandleAsync(CreateStockCommand request)
     {
         var stock = new Stock(request.Description, request.BloodType, request.BloodRhFactor, request.QuantityMl, request.MinimumQuantityMl);
+        var isValidStockTypesResult = stock.IsValidBloodType();
+        if (isValidStockTypesResult.IsFailure)
+        {
+            return Result.Fail(isValidStockTypesResult.Error);
+        }
         if (!await _unitOfWork.StockRepository.IsStockUniqueAsync(stock))
         {
             return Result.Fail(DomainErrors.Stock.DuplicatedStockError);

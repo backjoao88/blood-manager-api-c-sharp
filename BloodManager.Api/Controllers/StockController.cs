@@ -1,11 +1,12 @@
-﻿using Application.Commands.Donors.CreateDonor;
+﻿using Application.Abstractions.BkMediator;
+using Application.Commands.Donors.CreateDonor;
 using Application.Commands.Donors.UpdateDonor;
 using Application.Commands.Stocks.CreateStock;
 using Application.Commands.Stocks.UpdateStock;
+using Application.Queries.Stocks.ReadAllStocks;
 using Application.Queries.Stocks.ReadStockById;
 using Application.ViewModels;
 using BloodManager.Api.Abstractions;
-using BloodManager.Application.Abstractions.BkMediator;
 using Core.Primitives.Result;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,19 @@ public class StockController : ApiController
     {
         var result = await _mediator.SendAsync<UpdateStockCommand, Result>(updateStockCommand);
         return result.IsSuccess ? Ok() : NotFound(result.Error);
+    }
+    
+    /// <summary>
+    /// Returns a list of all stocks
+    /// </summary>
+    /// <returns>A status 200 OK</returns>
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetAll()
+    {
+        var readAllStocksQuery = new ReadAllStocksQuery();
+        var stocksViewModel = await _mediator.SendAsync<ReadAllStocksQuery, List<StockViewModel>>(readAllStocksQuery);
+        return Ok(stocksViewModel);
     }
 
     /// <summary>

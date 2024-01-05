@@ -1,5 +1,4 @@
 ﻿using Application.Abstractions.BkMediator;
-using BloodManager.Application.Abstractions.BkMediator;
 using Core.Contracts;
 using Core.Primitives;
 using Core.Primitives.Result;

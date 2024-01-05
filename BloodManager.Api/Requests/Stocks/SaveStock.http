@@ -3,8 +3,8 @@ Content-Type: application/json
 
 {
   "description": "RH Factor 2 and BloodType 1",
-  "bloodType": 1,
-  "bloodRhFactor": 2,
+  "bloodType":6,
+  "bloodRhFactor": 0,
   "quantityMl": 1,
   "minimumQuantityMl": 1
 }

@@ -1,5 +1,6 @@
 ﻿using Core.Enums;
 using Core.Primitives;
+using Core.Primitives.Result;
 
 namespace Core.Entities;
 
@@ -21,8 +22,38 @@ public class Stock : Entity
     public EBloodRhFactor BloodRhFactor { get; set; }
     public double QuantityMl { get; set; }
     public double MinimumQuantityMl { get; set; }
-    public void Update(double quantityMl)
+
+    /// <summary>
+    /// Checks if the current blood type and RH factor are valid
+    /// </summary>
+    /// <returns>A result object</returns>
+    public Result IsValidBloodType()
     {
+        var validBloodTypes = Enum.GetValues(typeof(EBlood)).Cast<int>().ToList();
+        if (!validBloodTypes.Contains((int)BloodType)) 
+        {
+            return Result.Fail(DomainErrors.Stock.NotFoundBloodTypeError);
+        }
+        var validBloodRhFactor = Enum.GetValues(typeof(EBloodRhFactor)).Cast<int>().ToList();
+        if (!validBloodRhFactor.Contains((int)BloodRhFactor)) 
+        {
+            return Result.Fail(DomainErrors.Stock.NotFoundBloodRhFactorError);
+        }
+        return Result.Ok();
+    }
+    /// <summary>
+    /// Increases or decreases the blood quantity 
+    /// </summary>
+    /// <param name="quantityMl"></param>
+    /// <returns>A result object</returns>
+    public Result Update(double quantityMl)
+    {
+        var futureStock = QuantityMl + quantityMl;
+        if (futureStock <= MinimumQuantityMl)
+        {
+            return Result.Fail(DomainErrors.Stock.MinimumStockQuantityReachedError);
+        }
         QuantityMl += quantityMl;
+        return Result.Ok();
     }
 }

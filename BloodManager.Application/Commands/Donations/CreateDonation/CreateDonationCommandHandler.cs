@@ -1,6 +1,5 @@
 ﻿using System.Runtime.InteropServices.JavaScript;
 using Application.Abstractions.BkMediator;
-using BloodManager.Application.Abstractions.BkMediator;
 using Core.Contracts;
 using Core.Entities;
 using Core.Primitives;
@@ -51,7 +50,12 @@ public class CreateDonationCommandHandler : IBkRequestHandler<CreateDonationComm
         {
             return Result.Fail(DomainErrors.Stock.NotFoundStockError);
         }
-        stock.Update(donation.QuantityMl);
+        var stockUpdateResult = stock.Update(donation.QuantityMl);
+        if (stockUpdateResult.IsFailure)
+        {
+            // stock error
+            return Result.Fail(stockUpdateResult.Error);
+        }
         // ----
         await _unitOfWork.DonationRepository.SaveAsync(donation);
         await _unitOfWork.CompleteAsync();
